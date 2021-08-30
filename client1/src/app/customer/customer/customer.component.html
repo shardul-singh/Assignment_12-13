@@ -1,0 +1,54 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Customer Name</th>
+            <th scope="col">Customer Website</th>
+            <th scope="col">Customer Address</th>
+            <th scope="col">Show Users</th>
+            <th scope="col">Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let item of data">
+                <td>{{item.cid}}</td>
+                <td>{{item.customer_name}}</td>
+                <td>{{item.customer_website}}</td>
+                <td>{{item.customer_address}}</td>
+                <td><button (click)="showUser(item.cid)" class="btn btn-primary">Show User</button>
+                    <button (click)="cancel()" class="btn btn-primary">Cancel</button></td>
+                <td><i (click)="deleteCustomer(item.cid)" class="fa fa-trash" style="font-size:20px;color:red;"></i>
+                  <a routerLink="/updc/{{item.cid}}"><i class="fa fa-edit" style="font-size:20px;color:blue;"></i></a>
+                </td>
+        
+            </tr>
+          
+        </tbody>
+      </table>
+</div>
+
+<div *ngIf="show" class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let item of udata.user1s">
+                <td>{{item.Uid1}}</td>
+                <td>{{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+        
+            </tr>
+          
+        </tbody>
+      </table>
+</div>

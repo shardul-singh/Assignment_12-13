@@ -1,0 +1,36 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Name</th>
+            <th scope="col">Website</th>
+            <th scope="col">Address</th>
+            <th scope="col">Role Name</th>
+            <th scope="col">Operation</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr scope="row" *ngFor="let item of data">
+                <td>{{item.Uid1}}</td>
+                <td>{{item.firstname}}</td>
+                <td>{{item.lastname}}</td>
+                <td>{{item.email}}</td>
+                <td>{{item.phone}}</td>
+                <td>{{item.customer.customer_name}}</td>
+                <td>{{item.customer.customer_website}}</td>
+                <td>{{item.customer.customer_address}}</td>
+                <td>{{item.role.role_name}}</td>
+                <td><i (click)="deleteUser(item.Uid1)" class="fa fa-trash" style="font-size:20px;color:red;"></i>
+                  <a routerLink="/updu/{{item.Uid1}}"><i class="fa fa-edit" style="font-size:20px;color:blue;"></i></a>
+                </td>
+        
+            </tr>
+          
+        </tbody>
+      </table>
+</div>
